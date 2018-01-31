@@ -467,7 +467,7 @@ export default class IFrameNavigator implements Navigator {
                 parentElement.appendChild(listElement);
             }
             createTOC(this.tocView, toc);
-        } else {
+        } else if (this.contentsControl.parentElement) {
             this.contentsControl.parentElement.style.display = "none";
         }
 

@@ -987,10 +987,10 @@ describe("IFrameNavigator", () => {
             expect(link4.text).to.equal("Item 2");
 
             const sublinks = link1.parentElement.querySelectorAll("ul > li > a");
-            expect(sublinks.length).to.equal(2);
+            expect(sublinks.length).to.equal(3);
 
-            expect(sublinks[0]).to.equal(link2);
-            expect(sublinks[1]).to.equal(link3);
+            expect(sublinks[1]).to.equal(link2);
+            expect(sublinks[2]).to.equal(link3);
         });
 
         it("should show and hide when contents control is clicked", async () => {

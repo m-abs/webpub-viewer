@@ -15,15 +15,17 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "es5"
+    "target": "es5",
+    "lib": [
+      "dom",
+      "es2015"
+    ]
   },
-  "files": [
-    "typings/index.d.ts"
-  ],
   "include": [
     "src/**/*"
   ],
   "exclude": [
-    "src/sw.ts"
+    "src/sw.ts",
+    "node_modules"
   ]
 }

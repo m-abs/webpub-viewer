@@ -62,7 +62,7 @@ export default class BookSettings {
     private viewButtons: { [key: string]: HTMLButtonElement };
     private readonly fontSizes: string[];
     private fontSizeButtons: { [key: string]: HTMLButtonElement };
-    private fontSizeLabel: HTMLLIElement;
+    protected fontSizeLabel: HTMLLIElement;
     private offlineStatusElement: HTMLElement;
 
     private viewChangeCallback: () => void = () => {};
