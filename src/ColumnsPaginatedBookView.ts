@@ -16,9 +16,9 @@ export default class ColumnsPaginatedBookView implements PaginatedBookView {
         // any is necessary because CSSStyleDeclaration type does not include
         // all the vendor-prefixed attributes.
         const body = HTMLUtilities.findRequiredElement(this.bookElement.contentDocument, "body") as any;
-        body.style.columnCount = 1;
-        body.style.WebkitColumnCount = 1;
-        body.style.MozColumnCount = 1;
+        body.style.columnCount = 2;
+        body.style.WebkitColumnCount = 2;
+        body.style.MozColumnCount = 2;
         body.style.columnFill = "auto";
         body.style.WebkitColumnFill = "auto";
         body.style.MozColumnFill = "auto";
@@ -68,21 +68,21 @@ export default class ColumnsPaginatedBookView implements PaginatedBookView {
         const body = HTMLUtilities.findRequiredElement(this.bookElement.contentDocument, "body") as any;
 
         const width = (BrowserUtilities.getWidth() - this.sideMargin * 2) + "px";
-        body.style.columnWidth = width;
-        body.style.WebkitColumnWidth = width;
-        body.style.MozColumnWidth = width;
-        body.style.columnGap = this.sideMargin * 2 + "px";
-        body.style.WebkitColumnGap = this.sideMargin * 2 + "px";
-        body.style.MozColumnGap = this.sideMargin * 2 + "px";
+        const columnWidth = "auto";
+        const columnGap = "3em";
+        body.style.columnWidth = columnWidth;
+        body.style.WebkitColumnWidth = columnWidth;
+        body.style.MozColumnWidth = columnWidth;
+        body.style.columnGap = columnGap;
+        body.style.WebkitColumnGap = columnGap;
+        body.style.MozColumnGap = columnGap;
         body.style.height = this.height + "px";
         body.style.width = width;
-        body.style.marginLeft = this.sideMargin + "px";
-        body.style.marginRight = this.sideMargin + "px";
         body.style.marginTop = "0px";
         body.style.marginBottom = "0px";
         this.bookElement.contentDocument.documentElement.style.height = this.height + "px";
         this.bookElement.style.height = this.height + "px";
-        this.bookElement.style.width = BrowserUtilities.getWidth() + "px";
+        this.bookElement.style.width = width;
 
         const images = body.querySelectorAll("img");
         for (const image of images) {
